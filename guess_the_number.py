@@ -30,11 +30,14 @@ def check_guess(guess, secret):
         return too_high
 
 
+
+
+
 def main():
 
     (low, high) = configure_range()
     secret = generate_secret(low, high)
-
+    count = 1
     while True:
         guess = get_guess()
         result = check_guess(guess, secret)
@@ -42,7 +45,8 @@ def main():
 
         if result == correct:
             break
-
+        count += 1
+    print(f'you guessed {count} guesses')
 
 if __name__ == '__main__':
     main()
